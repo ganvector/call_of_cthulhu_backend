@@ -1,0 +1,1 @@
+# Backend para o projeto de ficha de personagem de call of cthulhu
