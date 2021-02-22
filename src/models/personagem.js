@@ -98,7 +98,7 @@ const PersonagemSchema = new Schema({
   genero: { type: String, required: true },
   residencia: { type: String, required: true, default: '' },
   nacionalidade: { type: String, required: true, default: '' },
-  atributos: { type: AtributosSchema, required: true },
+  atributos: { type: AtributosSchema, required: true, default: {} },
   sanidade: { type: Number, required: true, default: 30 },
   sorte: { type: Number, required: true, default: 40 },
   pontosDeMagia: { type: Number, required: true, default: 7 },
