@@ -6,7 +6,7 @@ const Morgan = require('morgan'); // logs da chamada http
 const Winston = require('winston'); // logs em arquivos e no console
 
 const { settings } = require('./settings');
-const { initRoutes } = require('./api/routes');
+const { initRoutes } = require('./api');
 
 class Server {
   constructor() {
