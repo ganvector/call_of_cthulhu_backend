@@ -90,29 +90,38 @@ const PericiasOcupacionaisSchema = new Schema(
   { _id: false, _v: false }
 );
 
-const PersonagemSchema = new Schema({
-  nome: { type: String, required: true },
-  jogador: { type: String, required: true },
-  ocupacao: { type: String, required: true, default: '' },
-  idade: { type: Number, required: true },
-  genero: { type: String, required: true },
-  residencia: { type: String, required: true, default: '' },
-  nacionalidade: { type: String, required: true, default: '' },
-  atributos: { type: AtributosSchema, required: true, default: {} },
-  sanidade: { type: Number, required: true, default: 30 },
-  sorte: { type: Number, required: true, default: 40 },
-  pontosDeMagia: { type: Number, required: true, default: 7 },
-  morrendo: { type: Boolean, required: true, default: false },
-  inconsciente: { type: Boolean, required: true, default: false },
-  lesaoGrave: { type: Boolean, required: true, default: false },
-  insanidadeIndefinida: { type: Boolean, required: true, default: false },
-  insanidadeTemporaria: { type: Boolean, required: true, default: false },
-  movimento: { type: Number, required: true, default: 7 },
-  periciasOcupacionais: { type: PericiasOcupacionaisSchema, required: true, default: {} },
-  //TODO limitar esse campo a 280 caracteres
-  backstory: { type: String, required: true, default: '' },
-  armas: [],
-});
+const PersonagemSchema = new Schema(
+  {
+    nome: { type: String, required: true },
+    jogador: { type: String, required: true },
+    ocupacao: { type: String, required: true, default: '' },
+    idade: { type: Number, required: true },
+    genero: { type: String, required: true },
+    residencia: { type: String, required: true, default: '' },
+    nacionalidade: { type: String, required: true, default: '' },
+    atributos: { type: AtributosSchema, required: true, default: {} },
+    sanidade: { type: Number, required: true, default: 30 },
+    saudeAtual: { type: Number, required: true, default: 0 },
+    saudeMaxima: { type: Number, required: true, default: 0 },
+    sorte: { type: Number, required: true, default: 40 },
+    pontosDeMagia: { type: Number, required: true, default: 7 },
+    morrendo: { type: Boolean, required: true, default: false },
+    inconsciente: { type: Boolean, required: true, default: false },
+    lesaoGrave: { type: Boolean, required: true, default: false },
+    insanidadeIndefinida: { type: Boolean, required: true, default: false },
+    insanidadeTemporaria: { type: Boolean, required: true, default: false },
+    movimento: { type: Number, required: true, default: 7 },
+    periciasOcupacionais: { type: PericiasOcupacionaisSchema, required: true, default: {} },
+    //TODO limitar esse campo a 280 caracteres
+    backstory: { type: String, required: true, default: '' },
+    armas: [],
+  },
+  { _v: false }
+);
+
+PersonagemSchema.methods = {};
+
+PersonagemSchema.statics = {};
 
 const Personagem = mongoose.model('Personagem', PersonagemSchema, 'personagens');
 
